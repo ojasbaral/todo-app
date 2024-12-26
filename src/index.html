@@ -14,9 +14,9 @@
   </head>
   <body>
     <div
-      class="max-w-[1200px] grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4 mx-auto align-items-center justify-items-center text-center pt-4 poppins-regular"
+      class="max-w-[1300px] grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4 mx-auto align-items-center justify-items-center text-center pt-4 poppins-regular"
     >
-      <div class="block w-[30px]" id="left-arrow">
+      <div class="block w-[30px] text-white cursor-pointer" id="left-arrow">
         <svg
           width="100%"
           height="100%"
@@ -33,15 +33,43 @@
           />
         </svg>
       </div>
-      <div class="lg:block hidden lg:text-lg w-auto" id="day-0">
+      <div
+        class="days lg:block hidden lg:text-lg w-auto cursor-pointer day-0"
+        name="day-0"
+        data-day="0"
+      >
         <p>April 10</p>
         <p class="text-sm">Monday</p>
       </div>
-      <div class="md:block hidden md:text-xl w-auto" id="day-1">Tuesday</div>
-      <div class="block text-2xl w-auto text-white" id="day-2">Wednesday</div>
-      <div class="md:block hidden md:text-xl w-auto" id="day-3">Thursday</div>
-      <div class="lg:block hidden lg:text-lg w-auto" id="day-4">Friday</div>
-      <div class="block w-[30px]" id="right-arrow">
+      <div
+        class="day-1 days md:block hidden md:text-xl w-auto text-[#ffffffe6] cursor-pointer"
+        name="day-1"
+        data-day="1"
+      >
+        Tuesday
+      </div>
+      <div
+        name="day-2"
+        class="days block text-2xl w-auto text-white cursor-pointer"
+        data-day="2"
+      >
+        Wednesday
+      </div>
+      <div
+        class="days md:block hidden md:text-xl w-auto text-[#ffffffe6] cursor-pointer"
+        name="day-3"
+        data-day="3"
+      >
+        Thursday
+      </div>
+      <div
+        name="day-4"
+        data-day="4"
+        class="days lg:block hidden lg:text-lg w-auto cursor-pointer"
+      >
+        Friday
+      </div>
+      <div class="block w-[30px] text-white cursor-pointer" id="right-arrow">
         <svg
           width="100%"
           height="100%"
@@ -57,6 +85,17 @@
             stroke-linejoin="round"
           />
         </svg>
+      </div>
+    </div>
+
+    <div id="calendar" class="calendar-container" style="display: none">
+      <div class="calendar-header">
+        <button id="prevMonth">Prev</button>
+        <span id="monthYear"></span>
+        <button id="nextMonth">Next</button>
+      </div>
+      <div class="calendar-days">
+        <!-- Days will be populated dynamically -->
       </div>
     </div>
   </body>

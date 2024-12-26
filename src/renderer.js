@@ -14,10 +14,32 @@ document.addEventListener("DOMContentLoaded", () => {
   rightArrow.onclick = () => {
     shiftRange(1);
   };
+
+  document.querySelectorAll(".days").forEach((dayBlock) => {
+    dayBlock.addEventListener("click", () => {
+      const name = dayBlock.getAttribute("name");
+      const idToInd = { "day-0": 0, "day-1": 1, "day-3": 3, "day-4": 4 };
+      if (name !== "day-2") {
+        currDates = getDates(currDates[idToInd[name]]);
+        updateDates();
+      }
+    });
+  });
 });
 
+function getSize() {
+  const width = window.innerWidth;
+  if (width > 1024) {
+    return 5;
+  } else if (width > 768) {
+    return 3;
+  } else {
+    return 1;
+  }
+}
+
 function shiftRange(direction) {
-  const adjustment = direction * 5;
+  const adjustment = direction * getSize();
   currDates = getDates(adjustDate(currDates[2], adjustment));
   updateDates();
 }
@@ -71,7 +93,7 @@ function updateDates() {
   ];
   const size = ["sm", "base", "base", "base", "sm"];
   for (let i = 0; i < 5; i++) {
-    let day = document.getElementById(`day-${i}`);
-    day.innerHTML = `<p>${months[currDates[i].getMonth()]} ${currDates[i].getDate()}</p><p class="text-${size[i]}">${days[currDates[i].getDay()]}</p>`;
+    let day = document.getElementsByName(`day-${i}`);
+    day[0].innerHTML = `<p>${months[currDates[i].getMonth()]} ${currDates[i].getDate()}</p><p class="text-${size[i]}">${days[currDates[i].getDay()]}</p>`;
   }
 }
