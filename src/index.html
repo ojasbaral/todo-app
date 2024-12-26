@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="renderer.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="max-w-[1200px] grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4 mx-auto align-items-center justify-items-center text-center pt-4 poppins-regular"
+    >
+      <div class="block w-[30px]" id="left-arrow">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 12H5M5 12L12 19M5 12L12 5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="lg:block hidden lg:text-lg w-auto" id="day-0">
+        <p>April 10</p>
+        <p class="text-sm">Monday</p>
+      </div>
+      <div class="md:block hidden md:text-xl w-auto" id="day-1">Tuesday</div>
+      <div class="block text-2xl w-auto text-white" id="day-2">Wednesday</div>
+      <div class="md:block hidden md:text-xl w-auto" id="day-3">Thursday</div>
+      <div class="lg:block hidden lg:text-lg w-auto" id="day-4">Friday</div>
+      <div class="block w-[30px]" id="right-arrow">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12H19M19 12L12 5M19 12L12 19"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
